@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Image Encryption</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/encrypt.css')}}">
+    </head>
+    <body>
+        <h1>Image Encryption</h1>
+        <div>
+            <span>Encryption Key: </span>
+            <input type="text" class="input" placeholder="Please enter an encryption key">
+            <br>
+            <br>
+            <span>File Upload: </span>
+            <span id="file-name"></span>
+            <br>
+            <br>
+            <button id="upload">Upload</button>
+            <button id="encrypt">Encrypt</button>
+            <br>
+            <br>
+            <img id="uploaded-img" src="">
+            <img id="encrypted-img" src="">
+            <br>
+            <br>
+            <span>List of Encrypted Files: </span>
+            <span id="file-list"></span>
+            <br>
+            <br>
+            <span>Download: </span>
+            <input type="text" id="download-input" class="input" placeholder=" Please enter one of the above files to download">
+            <br>
+            <button id="download-button">Download</button>
+        </div>
+    </body>
+</html>
