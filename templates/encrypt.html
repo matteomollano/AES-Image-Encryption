@@ -1,38 +1,51 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 
-<html lang="en">
+<html lang="en"> 
     <head>
         <meta charset="utf-8">
-        <title>Image Encryption</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/encrypt.css')}}">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>AES Image Encryption</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Image Encryption</h1>
-        <div>
-            <span>Encryption Key: </span>
-            <input type="text" class="input" placeholder="Please enter an encryption key">
-            <br>
-            <br>
-            <span>File Upload: </span>
-            <span id="file-name"></span>
-            <br>
-            <br>
-            <button id="upload">Upload</button>
-            <button id="encrypt">Encrypt</button>
-            <br>
-            <br>
-            <img id="uploaded-img" src="">
-            <img id="encrypted-img" src="">
-            <br>
-            <br>
-            <span>List of Encrypted Files: </span>
-            <span id="file-list"></span>
-            <br>
-            <br>
-            <span>Download: </span>
-            <input type="text" id="download-input" class="input" placeholder=" Please enter one of the above files to download">
-            <br>
-            <button id="download-button">Download</button>
+        <div style="padding: 25px;">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="encrypt" style="font-size: 1.5rem;">Encryption</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="decrypt" style="font-size: 1.5rem;">Decryption</a>
+                </li>
+            </ul><br>
+
+            <h1 class="display-5">Image Encryption</h1><br>
+            <div class="mb-3">
+                <label for="encryption-key" class="form-label">Encryption Key</label>
+                <input type="password" id="encryption-key" class="form-control" aria-describedby="passwordHelpBlock">
+                <div id="passwordHelpBlock" class="form-text">Encryption key must be 16 characters</div>
+            </div><br>
+
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Select an image</label>
+                <input type="file" class="form-control" id="formFile">
+            </div>
+            <button type="button" class="btn btn-primary">Encrypt</button><br><br><br>
+
+            <div class="form-floating">
+                <select class="form-select" id="floatingSelect">
+                    <option selected>Choose...</option>
+                    <!-- 
+                        Below are some example values for testing purposes
+                        Real images will be populated here from a list of encrypted files 
+                    -->
+                    <option value="1">puppy.jpeg</option>
+                    <option value="2">dog.png</option>
+                    <option value="3">tiger.jpg</option>
+                </select>
+                <label for="floatingSelect">Choose a file for download</label>
+            </div><br>
+            <button type="button" class="btn btn-dark">Download</button>
         </div>
     </body>
 </html>
