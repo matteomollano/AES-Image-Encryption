@@ -1,0 +1,8 @@
+# Ignore cache files
+__pycache__
+
+# Ignore flask folder, which includes binary files, library files, and flask virtual environment
+flask
+
+# Ignore MacOS system files
+.DS_Store

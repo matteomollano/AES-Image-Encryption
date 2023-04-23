@@ -9,7 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div style="padding: 25px;">
+        <!--
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" href="encrypt" style="font-size: 1.5rem;">Encryption</a>
@@ -18,8 +18,25 @@
                     <a class="nav-link" href="decrypt" style="font-size: 1.5rem;">Decryption</a>
                 </li>
             </ul><br>
+        -->
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid" style="margin-left: 15px">
+                    <a class="navbar-brand" href="../" style="font-size: 1.3rem;">AES Image Encryption</a>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="encrypt" style="font-size: 1.3rem;">Encryption</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="decrypt" style="font-size: 1.3rem;">Decryption</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>  
+        </header>
 
-            <h1 class="display-5">Image Encryption</h1><br>
+        <div style="margin-left: 25px; margin-right: 25px; margin-top: 25px;">
+            <h1 class="display-6">Image Encryption</h1><br>
             <div class="mb-3">
                 <label for="encryption-key" class="form-label">Encryption Key</label>
                 <input type="password" id="encryption-key" class="form-control" aria-describedby="passwordHelpBlock">
@@ -39,9 +56,9 @@
                         Below are some example values for testing purposes
                         Real images will be populated here from a list of encrypted files 
                     -->
-                    <option value="1">puppy.jpeg</option>
-                    <option value="2">dog.png</option>
-                    <option value="3">tiger.jpg</option>
+                    <option value="1">puppy.enc</option>
+                    <option value="2">dog.enc</option>
+                    <option value="3">tiger.enc</option>
                 </select>
                 <label for="floatingSelect">Choose a file for download</label>
             </div><br>
