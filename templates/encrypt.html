@@ -46,10 +46,11 @@
 
         <div style="margin-left: 25px; margin-right: 25px; margin-top: 25px; margin-bottom: 50px;">
             <h1 class="display-6">Image Encryption</h1><br>
+
             <div class="mb-3">
                 <form method="POST" action="/process">
                     <label for="encryption-key" class="form-label">Encryption Key</label>
-                    <input type="password" id="encryption-key" name="encryption-key" class="form-control" aria-describedby="passwordHelpBlock">
+                    <input type="password" id="encryption-key" name="encryption-key" class="form-control" aria-describedby="passwordHelpBlock" required pattern=".{16}" title="Please enter a 16 character encryption key!">
                     <div id="passwordHelpBlock" class="form-text" style="margin-bottom: 10px;">Encryption key must be 16 characters</div>
                     <button type="submit" class="btn btn-primary">Submit Key</button>
                 </form>
@@ -61,7 +62,18 @@
                     <input type="file" class="form-control" id="formFile" name="formFile" accept="image/*" style="margin-bottom: 15px;">
                     <button type="submit" class="btn btn-success">Encrypt</button>
                 </form>
-            </div><br>
+            </div>
+
+            {% with encrypted_errors = get_flashed_messages() %}
+            {% if encrypted_errors %}
+            <div class="alert alert-danger">
+                {% for error in encrypted_errors %}
+                {{ error }}
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <br>
 
             <form method="POST" action="/download">
                 <div class="form-floating">
