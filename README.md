@@ -23,3 +23,20 @@ Use `deactivate` to exit the environment.
 Use `flask run --debug` to run the app in debug mode (This is so you don't have to re-run the app each time you make a change to the code).
 
 9. To view the website, type `127.0.0.1:5000` into a browser of your choice. This will take you to the home page of the website.
+
+
+# How to set up an .env (environment variable):
+
+1. Generate a random secret key using `python3 -c 'import os; print(os.urandom(32).hex())'`
+
+2. Install the python-dotenv module using `pip install python-dotenv`
+
+3. Create a new file in your app directory called `.env`
+
+4. Add the line `SECRET_KEY = 'add your secret key here...'` to the `.env` file
+
+5. Ensure that your app.py file contains the following: <br>
+`from dotenv import load_dotenv` <br>
+`import os` <br>
+`load_dotenv()` <br>
+`app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')`
