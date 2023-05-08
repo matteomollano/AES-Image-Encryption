@@ -19,8 +19,7 @@ Use `deactivate` to exit the environment.
 
 7. Install the Crypto library for this project using `pip install pycryptodome`
 
-8. Type `flask run` in the terminal to run the project. <br>
-Use `flask run --debug` to run the app in debug mode (This is so you don't have to re-run the app each time you make a change to the code).
+8. Type `python3 app.py` in the terminal to run the project. <br>
 
 9. To view the website, type `127.0.0.1:5000` into a browser of your choice. This will take you to the home page of the website.
 
